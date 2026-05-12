@@ -256,10 +256,10 @@ export default function HomePage() {
                   key={item.label}
                   href={item.href}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   style={{ display: 'flex', alignItems: 'center', gap: 10, color: '#c9d1d9', textDecoration: 'underline', textUnderlineOffset: 3, fontSize: 22 }}
                 >
-                  <item.icon size={20} color="#8b949e" />
+                  <item.icon size={20} color="#8b949e" aria-hidden="true" />
                   {item.label}
                 </a>
               ))}
