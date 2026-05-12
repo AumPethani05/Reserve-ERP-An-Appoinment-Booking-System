@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "VaidyaLink"
+version = "1.0.0"
+id = "artifacts/vaidyalink"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20161
+
+[services.development]
+run = "pnpm --filter @workspace/vaidyalink run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/vaidyalink", "run", "build" ]
+publicDir = "artifacts/vaidyalink/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20161"
+BASE_PATH = "/"
