@@ -265,7 +265,7 @@ export default function HomePage() {
               ))}
               {aboutStats.map(item => (
                 <div key={item.value} style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 22 }}>
-                  <item.icon size={20} color="#8b949e" />
+                  <item.icon size={20} color="#8b949e" aria-hidden="true" />
                   {item.value}
                 </div>
               ))}
