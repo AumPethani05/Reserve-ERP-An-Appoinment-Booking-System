@@ -1,5 +1,6 @@
 import { Link } from 'wouter';
 import { useAuth } from '@/hooks/useAuth';
+import { Activity, BookOpen, Eye, GitFork, Scale, Settings, Star } from 'lucide-react';
 
 const CATEGORIES = [
   { value: 'sports', label: 'Sports & Turf', icon: '⚽', desc: 'Book football turfs, cricket nets, badminton courts', color: '#16a34a' },
@@ -24,6 +25,18 @@ const features = [
   { icon: '🏢', title: 'Any Business', description: 'Sports turfs, clinics, salons, gyms — any appointment-based business on one platform.' },
   { icon: '📊', title: 'Business ERP', description: 'Manage resources, schedules, bookings and invoices from a powerful business dashboard.' },
   { icon: '🔒', title: 'Secure & Reliable', description: 'Data protected with industry-grade security. Atomic bookings prevent double-booking.' },
+];
+
+const aboutLinks = [
+  { icon: BookOpen, label: 'Readme', href: '/README.md' },
+  { icon: Scale, label: 'MIT license', href: '/LICENSE' },
+  { icon: Activity, label: 'Activity', href: '#' },
+];
+
+const aboutStats = [
+  { icon: Star, value: '0 stars' },
+  { icon: Eye, value: '0 watching' },
+  { icon: GitFork, value: '0 forks' },
 ];
 
 export default function HomePage() {
@@ -217,6 +230,48 @@ export default function HomePage() {
           </div>
         </section>
       )}
+
+      {/* GitHub-style About */}
+      <section style={{ padding: '56px 24px 24px', background: 'var(--color-surface-container-low)' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
+          <div style={{
+            width: '100%',
+            maxWidth: 380,
+            background: '#0d1117',
+            color: '#c9d1d9',
+            borderRadius: 12,
+            border: '1px solid #30363d',
+            padding: 24,
+          }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+              <h3 style={{ color: '#f0f6fc', fontSize: 30, fontFamily: 'Manrope, sans-serif', fontWeight: 700 }}>About</h3>
+              <Settings size={18} color="#8b949e" />
+            </div>
+            <p style={{ color: '#8b949e', fontSize: 21, fontStyle: 'italic', lineHeight: 1.45, marginBottom: 18 }}>
+              No description, website, or topics provided.
+            </p>
+            <div style={{ display: 'grid', gap: 12 }}>
+              {aboutLinks.map(item => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  style={{ display: 'flex', alignItems: 'center', gap: 10, color: '#c9d1d9', textDecoration: 'none', fontSize: 22 }}
+                >
+                  <item.icon size={20} color="#8b949e" />
+                  {item.label}
+                </a>
+              ))}
+              {aboutStats.map(item => (
+                <div key={item.value} style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 22 }}>
+                  <item.icon size={20} color="#8b949e" />
+                  {item.value}
+                </div>
+              ))}
+            </div>
+            <div style={{ borderTop: '1px solid #30363d', marginTop: 18 }} />
+          </div>
+        </div>
+      </section>
 
       <footer style={{ background: 'var(--color-surface-container-low)', borderTop: '1px solid var(--color-surface-container)', padding: '40px 24px', textAlign: 'center' }}>
         <div style={{ fontSize: 13, color: 'var(--color-outline)' }}>
