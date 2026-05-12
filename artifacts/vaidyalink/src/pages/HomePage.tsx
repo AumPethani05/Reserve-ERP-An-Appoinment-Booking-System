@@ -28,9 +28,9 @@ const features = [
 ];
 
 const aboutLinks = [
-  { icon: BookOpen, label: 'Readme', href: '/README.md' },
-  { icon: Scale, label: 'MIT license', href: '/LICENSE' },
-  { icon: Activity, label: 'Activity', href: '#' },
+  { icon: BookOpen, label: 'Readme', href: 'https://github.com/AumPethani05/Reserve-ERP-An-Appoinment-Booking-System/blob/main/README.md' },
+  { icon: Scale, label: 'MIT license', href: 'https://github.com/AumPethani05/Reserve-ERP-An-Appoinment-Booking-System/blob/main/LICENSE' },
+  { icon: Activity, label: 'Activity', href: 'https://github.com/AumPethani05/Reserve-ERP-An-Appoinment-Booking-System/pulse' },
 ];
 
 const aboutStats = [
@@ -244,8 +244,8 @@ export default function HomePage() {
             padding: 24,
           }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-              <h3 style={{ color: '#f0f6fc', fontSize: 30, fontFamily: 'Manrope, sans-serif', fontWeight: 700 }}>About</h3>
-              <Settings size={18} color="#8b949e" />
+              <h2 style={{ color: '#f0f6fc', fontSize: 30, fontFamily: 'Manrope, sans-serif', fontWeight: 700 }}>About</h2>
+              <Settings size={18} color="#8b949e" aria-hidden="true" />
             </div>
             <p style={{ color: '#8b949e', fontSize: 21, fontStyle: 'italic', lineHeight: 1.45, marginBottom: 18 }}>
               No description, website, or topics provided.
@@ -255,7 +255,9 @@ export default function HomePage() {
                 <a
                   key={item.label}
                   href={item.href}
-                  style={{ display: 'flex', alignItems: 'center', gap: 10, color: '#c9d1d9', textDecoration: 'none', fontSize: 22 }}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ display: 'flex', alignItems: 'center', gap: 10, color: '#c9d1d9', textDecoration: 'underline', textUnderlineOffset: 3, fontSize: 22 }}
                 >
                   <item.icon size={20} color="#8b949e" />
                   {item.label}
