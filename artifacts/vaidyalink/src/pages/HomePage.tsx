@@ -257,6 +257,7 @@ export default function HomePage() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`View ${item.label} on GitHub`}
                   style={{ display: 'flex', alignItems: 'center', gap: 10, color: '#c9d1d9', textDecoration: 'underline', textUnderlineOffset: 3, fontSize: 22 }}
                 >
                   <item.icon size={20} color="#8b949e" aria-hidden="true" />
